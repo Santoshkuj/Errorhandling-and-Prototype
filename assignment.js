@@ -189,9 +189,11 @@ console.log(checkNum(6));
 // products using the filter() method. Finally, it returns a new array containing only the products with the same 
 // category as the input
 
-function filterCAtagory(products){
-  return function(catagory) {
-    return products.filter((product)=> {product.catagory == catagory})
+function filterBycatagory(products) {
+  return function(catagory){
+    return products.filter((product) =>{
+      return product.category === catagory
+    });
   }
 }
 
@@ -203,5 +205,5 @@ const products = [
 
 ];
 
-const clothingProducts = filterCAtagory(products)("Accessories")
+const clothingProducts = filterBycatagory(products)("Accessories")
 console.log(clothingProducts)
